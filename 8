@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculando o aumento salarial</title>
+    <script>
+        function calcularAumento() {
+            
+            var salario = parseFloat(document.getElementById("salario").value);
+            var percentualAumento = parseFloat(document.getElementById("percentualAumento").value);
+
+            if (isNaN(salario) || isNaN(percentualAumento) || salario <= 0 || percentualAumento <= 0) {
+                alert("Por favor, insira valores que sejam válidos para o salário e para o percentual de aumento.");
+            } else {
+                
+                var aumento = salario * (percentualAumento / 100);
+
+                var novoSalario = salario + aumento;
+
+                alert("Valor do aumento: R$ " + aumento.toFixed(2) + "\nNovo salário: R$ " + novoSalario.toFixed(2));
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Calculando o aumento salarial</h1>
+
+    <label for="salario">Digite o salário atual do funcionário:</label>
+    <input type="text" id="salario" placeholder="Salário atual"><br><br>
+
+    <label for="percentualAumento">Digite o percentual de aumento (%):</label>
+    <input type="text" id="percentualAumento" placeholder="Percentual de aumento"><br><br>
+
+    <button onclick="calcularAumento()">Calcular Aumento</button>
+</body>
+</html>
